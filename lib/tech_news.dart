@@ -3,6 +3,13 @@ import 'package:url_launcher/url_launcher.dart';
 class technews extends StatelessWidget {
   static String id = 'technews';
   @override
+  launchURL(String url) async {
+    if (await canLaunch(url)) {
+      await launch(url, forceWebView: true);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
@@ -30,11 +37,8 @@ class technews extends StatelessWidget {
             GestureDetector(
               onTap :() {
                 Navigator.pushNamed(context, 'technews');
-                const _url = 'https://gadgets.ndtv.com/apps/news/facebook-page-redesign-new-admin-control-intuitive-layout-wider-visibility-news-feed-2568706';
-                void _launchURL() async =>
-                    await canLaunch(_url)
-                        ? await launch(_url)
-                        : throw 'Could not launch $_url';
+                const url = 'https://gadgets.ndtv.com/apps/news/facebook-page-redesign-new-admin-control-intuitive-layout-wider-visibility-news-feed-2568706';
+                launchURL(url);
               },
               child: const Text( 'Facebook Redesigns Pages With ‘Intuitive’ UI, Brings Dedicated News Feed',
                 style: TextStyle(
@@ -58,11 +62,8 @@ class technews extends StatelessWidget {
             GestureDetector(
               onTap :() {
                 Navigator.pushNamed(context, 'technews');
-                const _url = 'https://gadgets.ndtv.com/internet/news/google-search-guitar-tuner-update-feature-rollout-2568630';
-                void _launchURL() async =>
-                    await canLaunch(_url)
-                        ? await launch(_url)
-                        : throw 'Could not launch $_url';
+                const url = 'https://gadgets.ndtv.com/internet/news/google-search-guitar-tuner-update-feature-rollout-2568630';
+                launchURL(url);
               },
               child: const Text( 'Google Search Gets New Feature to Help You Tune Your Guitar',
                 style: TextStyle(
@@ -86,11 +87,8 @@ class technews extends StatelessWidget {
             GestureDetector(
               onTap :() {
                 Navigator.pushNamed(context, 'technews');
-                const _url = 'https://gadgets.ndtv.com/cryptocurrency/news/andrew-yang-support-bitcoin-cryptocurrency-us-2568767';
-                void _launchURL() async =>
-                    await canLaunch(_url)
-                        ? await launch(_url)
-                        : throw 'Could not launch $_url';
+                const url = 'https://gadgets.ndtv.com/cryptocurrency/news/andrew-yang-support-bitcoin-cryptocurrency-us-2568767';
+                launchURL(url);
               },
               child: const Text( 'Andrew Yang, American Presidential Hopeful, Speaks Up for Bitcoin',
                 style: TextStyle(
@@ -114,11 +112,8 @@ class technews extends StatelessWidget {
             GestureDetector(
               onTap :() {
                 Navigator.pushNamed(context, 'technews');
-                const _url = 'https://gadgets.ndtv.com/cryptocurrency/news/session-private-blockchain-messenger-decentralised-nodes-2568208';
-                void _launchURL() async =>
-                    await canLaunch(_url)
-                        ? await launch(_url)
-                        : throw 'Could not launch $_url';
+                const url = 'https://gadgets.ndtv.com/cryptocurrency/news/session-private-blockchain-messenger-decentralised-nodes-2568208';
+                launchURL(url);
               },
               child: const Text( 'Session Is a Blockchain-Based Private Messenger That Uses Decentralised Server Nodes To Ensure Anonymity',
                 style: TextStyle(
@@ -142,11 +137,8 @@ class technews extends StatelessWidget {
             GestureDetector(
               onTap :() {
                 Navigator.pushNamed(context, 'technews');
-                const _url = 'https://gadgets.ndtv.com/mobiles/news/iphone-battery-health-percentage-no-use-false-sham-claim-video-apple-2568419';
-                void _launchURL() async =>
-                    await canLaunch(_url)
-                        ? await launch(_url)
-                        : throw 'Could not launch $_url';
+                const url = 'https://gadgets.ndtv.com/mobiles/news/iphone-battery-health-percentage-no-use-false-sham-claim-video-apple-2568419';
+                launchURL(url);
               },
               child: const Text( 'iPhone Battery Health Percentage Found to Be Meaningless',
                 style: TextStyle(
@@ -171,11 +163,8 @@ class technews extends StatelessWidget {
             GestureDetector(
               onTap :() {
                 Navigator.pushNamed(context, 'technews');
-                const _url = 'https://gadgets.ndtv.com/internet/news/google-search-guitar-tuner-update-feature-rollout-2568630';
-                void _launchURL() async =>
-                    await canLaunch(_url)
-                        ? await launch(_url)
-                        : throw 'Could not launch $_url';
+                const url = 'https://gadgets.ndtv.com/internet/news/google-search-guitar-tuner-update-feature-rollout-2568630';
+                launchURL(url);
               },
               child: const Text( 'Google Search Gets New Feature to Help You Tune Your Guitar',
                 style: TextStyle(

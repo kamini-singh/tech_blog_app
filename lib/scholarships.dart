@@ -3,6 +3,13 @@ import 'package:url_launcher/url_launcher.dart';
 class scholarships extends StatelessWidget {
   static String id = 'scholarships';
   @override
+  launchURL(String url) async {
+    if (await canLaunch(url)) {
+      await launch(url, forceWebView: true);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
@@ -28,16 +35,8 @@ class scholarships extends StatelessWidget {
             GestureDetector(
               onTap :() {
                 Navigator.pushNamed(context, 'scholarships');
-                _launchURL() async {
-                  const url = " ";
-                  if(await canLaunch(url)){
-                    await launch(url);
-                  }
-                  else{
-                      throw "Could not launch $url";
-                }
-                  }
-
+                const url ="https://buildyourfuture.withgoogle.com/scholarships/generation-google-scholarship/";
+                launchURL(url);
               },
               child: const Text( 'Generation Google Scholarship',
                 style: TextStyle(
@@ -60,11 +59,9 @@ class scholarships extends StatelessWidget {
             GestureDetector(
               onTap :() {
                 Navigator.pushNamed(context, 'scholarships');
-                const _url = 'https://www.iie.org/Programs/WeTech/STEM-Scholarships-for-Women/Goldman-Sachs-Scholarship';
-                void _launchURL() async =>
-                    await canLaunch(_url)
-                        ? await launch(_url)
-                        : throw 'Could not launch $_url';
+                const url = 'https://www.iie.org/Programs/WeTech/STEM-Scholarships-for-Women/Goldman-Sachs-Scholarship';
+                launchURL(url);
+
               },
               child: const Text( 'Goldman Sachs WeTech Program',
                 style: TextStyle(
@@ -87,11 +84,8 @@ class scholarships extends StatelessWidget {
             GestureDetector(
               onTap :() {
                 Navigator.pushNamed(context, 'scholarships');
-                const _url = 'https://ghc.anitab.org/';
-                   void _launchURL() async =>
-                await canLaunch(_url)
-                 ? await launch(_url)
-                   : throw 'Could not launch $_url';
+                const url = 'https://ghc.anitab.org/';
+                launchURL(url);
               },
               child: const Text( 'Grace Hopper Celebration',
 
